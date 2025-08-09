@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+            background: linear-gradient(135deg, #f9f9f9, #d4f1f4);
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            background-color: #0077b6;
+            color: white;
+            border: none;
+            border-radius: 8px;
+        }
+        button:hover {
+            background-color: #023e8a;
+        }
+        #output {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .lucky {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎲 Random Number Generator 🎲</h1>
+    <button onclick="generateNumber()">Generate Number</button>
+    <div id="output"></div>
+
+    <script>
+        function generateNumber() {
+            let randomNumber = Math.floor(Math.random() * 100) + 1;
+            let outputDiv = document.getElementById('output');
+
+            if (randomNumber > 90) {
+                outputDiv.innerHTML = `Your number is ${randomNumber}! 🍀 <span class="lucky">Lucky Day!</span>`;
+            } else {
+                outputDiv.innerHTML = `Your number is ${randomNumber}`;
+            }
+        }
+    </script>
+</body>
+</html>
